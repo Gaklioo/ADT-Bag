@@ -192,4 +192,5 @@ int main() {
 	bag->printBag();
 
 
+	delete[] bag;
 }
