@@ -88,7 +88,7 @@ bool ArrayBag<T>::add(T newEntry) {
 
 template <typename T>
 ArrayBag<T>::~ArrayBag() {
-	delete bagArray;
+	delete[] bagArray;
 }
 
 template <typename T>
@@ -168,6 +168,11 @@ void ArrayBag<T>::printBag() {
 			std::cout << printValue << std::endl;
 		}
 	}
+}
+
+template <typename T>
+void ArrayBag<T>::deleteBag() {
+	~ArrayBag();
 }
 
 int main() {
