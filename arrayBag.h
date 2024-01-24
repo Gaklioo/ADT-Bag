@@ -51,5 +51,6 @@ public:
 	virtual bool doubleBagSize(); // return true if bag size was doubled
 	virtual bool isArrayCreated(); // return true if bag was successfully created.
 	virtual void printBag();
+	virtual void deleteBag();
 
 };
