@@ -58,8 +58,11 @@ bool ArrayBag<T>::doubleBagSize() {
 		for (int i = 0; i < currentBagSize; i++)
 		{
 			newBag[i] = bagArray[i];
+			bagArray[i] = newBag[i];
 		}
-		bagArray = newBag;
+
+
+		currentBagSize *= 2;
 		delete[] newBag;
 		return true;
 	}
@@ -172,17 +175,21 @@ void ArrayBag<T>::printBag() {
 
 template <typename T>
 void ArrayBag<T>::deleteBag() {
-	~ArrayBag();
+	ArrayBag<T>::~ArrayBag();
 }
 
 int main() {
 	ArrayBag<int> *bag = new ArrayBag<int>(3);
 	bag->add(10);
-	bag->add(25);
-	bag->add(10);
+	bag->add(20);
+	bag->add(30);
+	std::cout << bag->getCurrentSize() << std::endl;
+	bag->doubleBagSize();
+	std::cout << bag->getCurrentSize() << std::endl;
+	bag->add(40);
+	bag->add(50);
+	bag->add(60);
 	bag->printBag();
-	std::cout << std::endl;
-	bag->remove(25);
-	bag->printBag();
+
 
 }
